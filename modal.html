@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Pop Modal</title>
+  </head>
+  <body class="font-sans bg-gray-200">
+    <!-- Tombol untuk membuka modal pertama -->
+    <button id="openModalBtn" class="bg-blue-500 text-white py-2 px-4 my-4 mx-2 rounded">Buka Modal</button>
+
+    <!-- Modal Pertama -->
+    <div id="modal1" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
+      <div class="flex justify-center items-center h-full">
+        <div class="bg-white p-8 rounded shadow-lg">
+          <p>Tulisan Anda di Modal Pertama lorem200</p>
+          <button id="switchToModal2">Ganti ke Modal Kedua</button>
+          <button id="closeModal1">Tutup Modal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Kedua -->
+    <div id="modal2" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
+      <div class="flex justify-center items-center h-full">
+        <div class="bg-white p-8 rounded shadow-lg">
+          <p>Tulisan Anda di Modal Kedua</p>
+          <button id="switchToModal1">Ganti ke Modal Pertama</button>
+          <button id="closeModal2">Tutup Modal</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const openModalBtn = document.getElementById("openModalBtn");
+      const modal1 = document.getElementById("modal1");
+      const modal2 = document.getElementById("modal2");
+      const switchToModal2 = document.getElementById("switchToModal2");
+      const switchToModal1 = document.getElementById("switchToModal1");
+      const closeModal1 = document.getElementById("closeModal1");
+      const closeModal2 = document.getElementById("closeModal2");
+
+      openModalBtn.addEventListener("click", () => {
+        modal1.classList.remove("hidden");
+      });
+
+      switchToModal2.addEventListener("click", () => {
+        modal1.classList.add("hidden");
+        modal2.classList.remove("hidden");
+      });
+
+      switchToModal1.addEventListener("click", () => {
+        modal2.classList.add("hidden");
+        modal1.classList.remove("hidden");
+      });
+
+      closeModal1.addEventListener("click", () => {
+        modal1.classList.add("hidden");
+      });
+
+      closeModal2.addEventListener("click", () => {
+        modal2.classList.add("hidden");
+      });
+
+      // Menutup modal ketika mengklik di luar modal
+      // window.addEventListener("click", (event) => {
+      //   if (event.target === modal1) {
+      //     modal1.classList.add("hidden");
+      //   } else if (event.target === modal2) {
+      //     modal2.classList.add("hidden");
+      //   }
+      // })
+    </script>
+  </body>
+</html>

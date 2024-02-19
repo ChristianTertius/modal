@@ -1,0 +1,42 @@
+/* NAVBAR */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 9%;
+}
+
+.header .logo img{
+  padding-right: .5rem;
+}
+
+.header .navbar a{
+  font-family: Sahitya;
+  font-size: 1.1rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+  color: var(--primary);
+}
+
+.header .navbar .btn{
+  margin-top: 0;
+  color: var(--white);
+}
+
+.header .navbar .btn:hover{
+  color: var(--white);
+}
+
+#menu_btn{
+  display: none;
+}
